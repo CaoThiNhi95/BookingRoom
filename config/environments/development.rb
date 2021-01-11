@@ -55,13 +55,24 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    # Sending transactional email with Gmail
+    # address: 'smtp.gmail.com',
+    # port: 587,
+    # enable_starttls_auto: true,
+    # authentication: 'plain',
+    # user_name: ENV["gmail_user_name"],
+    # password: ENV["gmail_password"],
+    # domain: "smtp.gmail.com",
+    # openssl_verify_mode: "none",
+
+    # Sending transactional email with Mailgun
+    address: 'smtp.mailgun.org',
     port: 587,
     enable_starttls_auto: true,
     authentication: 'plain',
-    user_name: '', # TODO:
-    password: '', # TODO:
-    domain: "smtp.gmail.com",
-    openssl_verify_mode: "none",
+    user_name: ENV["mailgun_user_name"], # TODO:
+    password: ENV["mailgun_password"], # TODO:
+    domain: ENV["mailgun_domain"],
+    openssl_verify_mode: 'none',
   }
 end
