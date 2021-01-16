@@ -63,3 +63,7 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'figaro', '~> 1.2'
 
 gem 'paperclip', '~> 5.1.0'
+
+gem 'aws-sdk', '~> 2.8'
+
+gem 'paperclip-cloudinary'

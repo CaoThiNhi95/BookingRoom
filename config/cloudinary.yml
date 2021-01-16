@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dtmh3kbye
+  api_key: '241381391667853'
+  api_secret: u_LgV5f3-ZfC9Dti71_5YJ_NyXY
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dtmh3kbye
+  api_key: '241381391667853'
+  api_secret: u_LgV5f3-ZfC9Dti71_5YJ_NyXY
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dtmh3kbye
+  api_key: '241381391667853'
+  api_secret: u_LgV5f3-ZfC9Dti71_5YJ_NyXY
+  enhance_image_tag: true
+  static_file_support: false

@@ -75,4 +75,17 @@ Rails.application.configure do
     domain: ENV["mailgun_domain"],
     openssl_verify_mode: 'none',
   }
+
+  #S3
+  # config.paperclip_defaults = {
+  #   storage: :s3,
+  #   path: ':class/:attachment/:id/:style/:filename',
+  #   s3_host_name: 's3-ap-southeast-2.amazonaws.com',
+  #   s3_credentials: {
+  #     bucket: 'bookingroom',
+  #     access_key_id: '',
+  #     secret_access_key: '',
+  #     s3_region: 'ap-southeast-2'
+  #   }
+  #}
 end
