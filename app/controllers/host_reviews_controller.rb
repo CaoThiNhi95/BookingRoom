@@ -5,7 +5,7 @@ class HostReviewsController < ApplicationController
 
     #Step 2: Check if the current host already reviewed the guest in this reservation.
 
-    @reservation = Reservation.wher(
+    @reservation = Reservation.where(
       id: host_review_params[:reservation_id],
       room_id: host_review_params[:room_id],
       user_id: host_review_params[:guest_id]
@@ -43,6 +43,6 @@ class HostReviewsController < ApplicationController
 
   private
     def host_review_params
-      params.require(:host_review).permit(:comment, :start, :room_id, :reservation_id, :guest_id)
+      params.require(:host_review).permit(:comment, :star, :room_id, :reservation_id, :guest_id)
     end
 end
