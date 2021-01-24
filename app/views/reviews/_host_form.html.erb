@@ -16,7 +16,7 @@
       <div class="modal-body">
         <%= form_for current_user.host_reviews.new do |f| %>
           <div class="form-group text-center">
-            <div id="stars_<%=reservation.id%>"></div>
+            <div id="stars_<%= reservation.id %>"></div>
           </div>
           <div class="form-group">
               <%= f.text_area :comment, rows: 3, class: "form-control" %>
@@ -30,7 +30,7 @@
           </div>
 
           <script type="text/javascript">
-            $('#stars_<%=reservation.id%>').raty({
+            $('#stars_<%= reservation.id %>').raty({
               path: '/assets',
               scoreName: 'host_review[star]',
               score: 1
