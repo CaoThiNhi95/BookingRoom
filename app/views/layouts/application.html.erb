@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GG_API_KEY"] %>&libraries=places"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">

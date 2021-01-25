@@ -12,8 +12,13 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
-      <div class="form-group">
-        <%= text_field_tag :search, params[:search], placeholder: "Anywhere", class: "form-control" %>
+      <div class="row">
+        <div class="col-md-8 form-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Anywhere", class: "form-control", id: "autoaddress2" %>
+        </div>
+        <div class="col-md-4">
+          <%= submit_tag "Search", class: "btn btn-normal btn-block"  %>
+        </div>
       </div>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
@@ -46,3 +51,9 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
+
+<script>
+  $(function() {
+    $("#autoaddress2").geocomplete();
+  });
+</script>
