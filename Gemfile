@@ -74,4 +74,7 @@ gem 'jquery-ui-rails', '~> 5.0'
 
 gem 'ransack', '~> 1.7'
 
+#--- Booking Room ---
 gem 'twilio-ruby', '~> 4.11.1'
+gem 'fullcalendar-rails', '~> 3.4.0'
+gem 'momentjs-rails', '~> 2.17.1'
