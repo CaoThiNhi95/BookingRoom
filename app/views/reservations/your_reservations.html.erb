@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-3 col-sm-3">
     <ul class="sidebar-list">
       <li class="sidebar-item">
         <%= link_to "Your Listings", rooms_path, class: "sidebar-link" %>
@@ -12,7 +12,7 @@
       </li>
     </ul>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-9 col-sm-9">
     <div class="panel panel-default">
       <div class="panel-heading">
         Your Reservation
@@ -21,7 +21,7 @@
         <% @rooms.each do |room| %>
           <% room.reservations.each do |reservation| %>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-3">
                 <%= reservation.start_date.strftime('%v') %>
                 <p><%= reservation.status %></p>
                 <div class="form-inline">
@@ -36,12 +36,12 @@
                   <% end %>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-3">
                 <%= link_to room_path(reservation.room) do %>
                   <%= image_tag reservation.room.cover_photo(:thumb) %>
                 <% end %>
               </div>
-              <div class="col-md-5">
+              <div class="col-md-5 col-sm-6">
                 <%= link_to reservation.room.listing_name, room_path(reservation.room) %> <br><br>
                 <span>
                   <%= link_to user_path(reservation.user) do %>
@@ -50,7 +50,7 @@
                   <% end %>
                 </span>
               </div>
-              <div class="col-md-3 text-right">
+              <div class="col-md-3 col-sm-12 text-right">
                 <%= render partial: "reviews/host_form", locals: {reservation: reservation} if reservation.Approved? %>
               </div>
             </div>

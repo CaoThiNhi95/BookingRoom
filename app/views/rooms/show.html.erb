@@ -1,6 +1,6 @@
 <!-- Imgae -->
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 col-sm-12">
     <%= image_tag @room.cover_photo(nil), width: "100%" %>
   </div>
 </div>
@@ -8,14 +8,14 @@
 
 <div class="row">
   <!-- LEFT PANEL -->
-  <div class="col-md-8">
+  <div class="col-md-8 col-sm-8">
     <!-- Listing Name -->
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8 col-sm-8">
         <h1><%= @room.listing_name %></h1>
         <%= @room.address %>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-4">
         <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %> <br><br>
         <%= @room.user.fullname %>
       </div>
@@ -25,32 +25,32 @@
     <!-- Room Info -->
     <div class="row text-babu">
       <div class="row text-center row-space-1">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3">
           <i class="fa fa-home fa-2x"></i>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3">
           <i class="fa fa-user-circle-o fa-2x"></i>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3">
           <i class="fa fa-bed fa-2x"></i>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3">
           <i class="fa fa-bath fa-2x"></i>
         </div>
       </div>
 
       <div class="row text-center">
-        <div class="col-md-3"><%= @room.home_type %></div>
-        <div class="col-md-3"><%= pluralize(@room.accommodate, "Guest") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
+        <div class="col-md-3 col-sm-3"><%= @room.home_type %></div>
+        <div class="col-md-3 col-sm-3"><%= pluralize(@room.accommodate, "Guest") %></div>
+        <div class="col-md-3 col-sm-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
+        <div class="col-md-3 col-sm-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
       </div>
     </div>
     <hr>
 
     <!-- About -->
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 col-sm-12">
         <h3>About This Listing</h3>
         <p><%= @room.summary %></p>
       </div>
@@ -59,19 +59,19 @@
 
     <!-- Amenities -->
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-3">
         <h4>Amenities</h4>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-9 col-sm-9">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-6">
             <ul class="amenities">
               <li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
               <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
               <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
             </ul>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-6">
             <ul class="amenities">
               <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
               <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
@@ -118,7 +118,7 @@
 
     <!-- REVIEWS -->
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 col-sm-12">
         <h3>
           <%= pluralize(@guest_reviews.count, "Review") %>
           <span id="average_rating"></span>
@@ -164,7 +164,7 @@
       <div class="row">
         <h3>Near by</h3>
         <% for room in @room.nearbys(10) %>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <div class="panel panel-default">
               <div class="panel-heading preview">
                 <%= image_tag room.cover_photo(:medium) %>
@@ -181,7 +181,7 @@
   </div>
 
   <!-- RIGHT PANEL -->
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-4">
     <!-- Reservation Form -->
     <%= render 'reservations/form' %>
   </div>

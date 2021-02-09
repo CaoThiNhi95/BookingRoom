@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-3 col-sm-3">
     <ul class="sidebar-list">
       <li class="sidebar-item">
         <%= link_to "Your Listings", rooms_path, class: "sidebar-link" %>
@@ -12,7 +12,7 @@
       </li>
     </ul>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-9 col-sm-9">
     <div class="panel panel-default">
       <div class="panel-heading">
         Your Trips
@@ -20,16 +20,16 @@
       <div class="panel-body">
         <% @trips.each do |trip| %>
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-3">
               <%= trip.start_date.strftime('%v') %>
                 <p><%= trip.status %></p>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-3">
               <%= link_to room_path(trip.room) do %>
                 <%= image_tag trip.room.cover_photo(:thumb) %>
               <% end %>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 col-sm-6">
               <%= link_to trip.room.listing_name, room_path(trip.room) %> <br> <br>
               <span>
                   <%= image_tag avatar_url(trip.room.user), class:"img-circle avatar-small" %>
@@ -38,7 +38,7 @@
                   <% end %>
               </span>
             </div>
-            <div class="col-md-3 text-right">
+            <div class="col-md-3 col-sm-12 text-right">
               <%= render partial: "reviews/guest_form", locals: {reservation: trip} if trip.Approved? %>
             </div>
           </div>

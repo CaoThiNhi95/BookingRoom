@@ -6,11 +6,11 @@
   <% @host_reviews.order(id: :desc).each do |r| %>
     <hr>
     <div class="row">
-      <div class="col-md-3 text-center">
+      <div class="col-md-3 col-sm-3 text-center">
         <%= image_tag avatar_url(r.host), class: "img-circle avatar-medium" %>
         <strong><%= r.host.fullname %></strong>
       </div>
-      <dic class="col-md-9">
+      <dic class="col-md-9 col-sm-9">
         <div id="star_<%= r.id %>"></div>
         <% if current_user && current_user == r.host %>
           <span class="pull-right">
@@ -31,6 +31,6 @@
         score: <%= r.star %>
       });
     </script>
-    
+
   <% end %>
 <% end %>
